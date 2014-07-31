@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <title>BHUMP HTML5 multitrack player for musicians</title>
+        <ascript src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></ascript>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/view.js"></script>
+        <script src="js/waveformDrawer.js"></script>
+        <script src="js/track.js"></script>
+        <script src="js/song.js"></script>
+        <script src="js/buffer-loader.js"></script>
+        <script src="js/sound.js"></script>
+        <script src="js/jquery.knob.js"></script>
+        <script src="js/knob.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/recorderjs/recorder.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body onload="init();">
+	
+	<div id="app">
+	
+		<div id="console">
+		    <ul class="nav nav-tabs">
+              <li class="active"><a id="consoleTab" href="#home" data-toggle="tab">Console</a></li>
+              <li><a id="waveTab" href="#profile" data-toggle="tab">Wave</a></li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="home">
+                  <div id="messages">Please choose a song !</div>
+              </div>
+              <div class="tab-pane fade" id="profile">
+                  <canvas id="waveCanvas"></canvas>
+              </div>
+            </div>
+		</div>
+	
+		<div id="masterTools">
+		<div style="position : absolute;width : 602px;">
+			<h2 style="text-align : center;">BHUMP : an HTML5 Multitrack player !</h2>
+			
+			<span id="volume">
+    			<button id="bsound" onclick="masterMuteUnmute(this);" type="button" class="btn btn-default btn-lg master" style="margin-right: 28px;position: absolute;right: 0;margin-top: 28px;">
+                  <span class="glyphicon glyphicon-volume-up"></span>
+                </button>
+    			<input id ="masterVolume" class="knob masterVolume" data-width="100" data-height="100" data-displayInput=false value="100">
+			</span>
+			
+			<table style="margin-left: auto; margin-right: auto;">
+			    <tr><td>
+			        <button id="bplay" type="button" class="btn btn-default btn-lg" onclick="playAllTracks(0);" disabled>
+                      <span class="glyphicon glyphicon-play"></span>
+                    </button>
+                    
+                    <button id="bpause" onclick="pauseAllTracks();" disabled type="button" class="btn btn-default btn-lg">
+                      <span class="glyphicon glyphicon-pause"></span>
+                    </button>
+                    
+                    <button id="bstop" onclick="stopAllTracks();"  type="button" class="btn btn-default btn-lg" disabled>
+                      <span class="glyphicon glyphicon-stop"></span>
+                    </button>
+                    <button id="bstop" onclick="addNewTrackForRecord();"  type="button" class="btn btn-default btn-lg" disabled>
+                      <span class="glyphicon glyphicon-record"></span>
+                    </button>
+                     <button id="brecordMix" onclick="toggleRecordMix();"type="button" class="btn btn-default btn-lg" style="font-size: 10px;
+padding: 0;" disabled>Record mix
+                    </button>
+			    </td></tr>
+			    <tr><td id="loopBox">
+			        <button id="loopStart" onclick="setLoopStart();" type="button" class="btn btn-default btn-lg" style="font-size: 10px;
+padding: 0;" disabled>
+                      Start Loop
+                    </button>
+                    
+                    <button id="loopEnd"  onclick="setLoopEnd();" type="button" class="btn btn-default btn-lg" style="font-size: 10px;
+padding: 0;" disabled>
+                      End loop
+                    </button>
+                    
+                    <button id="loopReset"  onclick="resetSelection();" type="button" class="btn btn-default btn-lg" style="font-size: 10px;
+padding: 0;" disabled>
+                      Reset loop
+                    </button>
+                    
+                    <button onclick="loopOnOff();" id="loopOnOff" type="button" class="btn btn-default btn-lg" disabled>
+                      <span class="glyphicon glyphicon-repeat"></span>
+                    </button>
+			    </td></tr>
+			    <tr><td>
+			        <div id="songs" class="styled-select"></div>
+			        <br/>
+			    </td></tr>
+			</table>
+		</div>
+		</div>
+		
+		
+
+		<div id="scroll">
+    		<div id="trackControl">
+    			<table id="tracks">
+    				
+    			
+    			</table>
+    		</div>
+    		<div id="canvass">
+    			<div style="position: relative;">
+    				<canvas id="myCanvas" width="602" height="400" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+    				<canvas id="frontCanvas"                       style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+    			</div>
+    		</div>
+		</div>
+	
+	
+	</div>
+        
+
+
+        
+    </body>
+</html>

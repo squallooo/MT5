@@ -40,7 +40,8 @@ function Song(songName, context) {
     this.masterRecorderNode; // For saving the mix to a .wav file
     var recIndex = 0; // for generating name of exorted mix
     
-    // Origin of the web audio graph, useful for start/stop/pause
+    // Origin of the web audio graph, 
+    //useful for start/stop/pause
     this.sampleNodes = [];
    
    this.addTrack = function(instrument) {

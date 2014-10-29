@@ -37,11 +37,12 @@ function Song(songName, context) {
     this.masterVolumeNode = context.createGain();
     this.trackVolumeNodes = [];
     this.analyserNode =  context.createAnalyser();
-    this.masterRecorderNode; // For saving the mix to a .wav file
+    // For saving the mix to a .wav file, it's better to build this node only
+    // once and reuse it.
+    this.masterRecorderNode = new Recorder(this.masterVolumeNode);
     var recIndex = 0; // for generating name of exorted mix
     
-    // Origin of the web audio graph, 
-    //useful for start/stop/pause
+    // Origin of the web audio graph, useful for start/stop/pause
     this.sampleNodes = [];
    
    this.addTrack = function(instrument) {
@@ -79,7 +80,7 @@ function Song(songName, context) {
 
             // Plug a recorder node to the master volume node
             // Connect the master recorder node after the analyzer 
-             this.masterRecorderNode = new Recorder(this.masterVolumeNode);
+             //this.masterRecorderNode = new Recorder(this.masterVolumeNode);
         
             // connect the analyzer to the speakers
             this.analyserNode.connect(context.destination);
@@ -119,6 +120,7 @@ function Song(songName, context) {
         this.sampleNodes.forEach(function(s) {
             // destroy the nodes
             s.stop(0);
+            delete s;
         });
         
         this.paused = true;

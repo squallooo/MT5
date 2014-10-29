@@ -1,3 +1,5 @@
+// Developed by Michel Buffa
+
 var fs = require("fs");
 // We need to use the express framework: have a real web server that knows how to send mime types etc.
 var express=require('express');

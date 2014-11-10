@@ -1,6 +1,6 @@
 MT5 - A multitrack HTML5 Player
 ===========
-Online demo at http://mt5.gexsoft.com
+Online demo at http://mt5demo.gexsoft.com
 
 MT5 is a sort of jukebox like multitrack player that has been developed for musicians who like to study a song track by track, or mute some tracks and play along it.
 
@@ -19,7 +19,7 @@ Then look at the server.js file, you may want to change the default port value. 
   TRACKS_PATH = './client/multitrack/',
   addrIP = '127.0.0.1';
 
-Then run "node server.js" and open "http://localhost:9_8081" on a web browser. Then select any song in the drop down menu.
+Then run "node server.js" and open "http://localhost:8081" on a web browser. Then select any song in the drop down menu.
 
 The multitrack songs are located in the directory assigned to TRACK_PATH, this is by default client/multitrack, and a multitrack song is just a directory with files in it, corresponding to the tracks. Just create new dir with mp3, ogg, wav files and reload the page, you will be able to play new songs.
 

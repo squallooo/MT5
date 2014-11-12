@@ -34,7 +34,7 @@ body {
 }
 
 #waveCanvas {
-    height : 160px;
+    height : 150px;
     white-space: nowrap;
     overflow: auto;
     overflow-x: hidden;

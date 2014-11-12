@@ -21,9 +21,8 @@ Then look at the server.js file, you may want to change the default port value. 
 
 
 Then run "npm install" and then "node server.js" and open "http://localhost:8081" on a web browser. Then select any song in the drop down menu.
-=======
+
 Then run "node server.js" and open "http://localhost:8081" on a web browser. Then select any song in the drop down menu.
->>>>>>> 0d63b4523ea3ab777d0ed934c994bf27c818b399
 
 The multitrack songs are located in the directory assigned to TRACK_PATH, this is by default client/multitrack, and a multitrack song is just a directory with files in it, corresponding to the tracks. Just create new dir with mp3, ogg, wav files and reload the page, you will be able to play new songs.
 
@@ -32,7 +31,7 @@ MT5 has been kept simple. It runs on any modern browser, desktop or mobile, (tha
 The dirty work of managing the GUI, events, etc is done in sound.js... the main clock is in there too. We use requestAnimationFrame in order to measure time by intervals of about 1/60th of a second. Deltas are measured there in order to know "where we are in a song", and be able to jump or restart after a stop or a pause.
 
 Audio pausing or jumping in a song is way unnatural as the AudioBufferSource nodes can be started and stopped only once. This "fire and forget" approach chosen in web audio for these particular nodes means that we need to rebuild partially the web audio graph at each pause or jump. The play/pause/jump and building of the audio graph is done in the song.js file.
-=======
+
 The dirty work of managing theGUI, events, etc is done in sound.js... the main clock is in there too. We use requestAnimationFrame in order to measure time by intervals of about 1/60th of a second. Deltas are measured there in order to know "where we are in a song", and be able to jump or restart after a stop or a pause.
 
 We audio pausing or jumping in a song is way unnatural as the AudioBufferSource nodes can be started and stopped only once. This "fire and forget" approach chosen in web audio for these particular nodes means that we need to rebuild partially the web audio graph at each pause or jump. The play/pause/jump and building of the audio graph is done in the song.js file.

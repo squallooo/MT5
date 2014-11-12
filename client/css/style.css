@@ -34,13 +34,20 @@ body {
 }
 
 #waveCanvas {
-    height : 150px;
+    height : 160px;
     white-space: nowrap;
     overflow: auto;
     overflow-x: hidden;
 }
 
+
 #messages {
+	height : 160px;
+	white-space: nowrap;
+	overflow : auto;
+	overflow-x : hidden;
+}
+#help {
 	height : 160px;
 	white-space: nowrap;
 	overflow : auto;

@@ -411,10 +411,12 @@ function toFixed(value, precision) {
 }
 
 function animateTime() {
+    // clear canvas
+    View.frontCanvasContext.clearRect(0, 0, window.View.masterCanvas.width, window.View.masterCanvas.height);
+    
     // Draw something only if a song has been loaded
     if(currentSong !== undefined) {
     
-        View.frontCanvasContext.clearRect(0, 0, window.View.masterCanvas.width, window.View.masterCanvas.height);
     
         // Draw selection for loop
         drawSelection();

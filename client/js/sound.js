@@ -474,9 +474,27 @@ function animateTime() {
                     stopAllTracks();
                 }
             }
-    }
+    } else {
+        showWelcomeMessage();
     }
     requestAnimFrame(animateTime);
+}
+
+function showWelcomeMessage() {
+    View.frontCanvasContext.save();
+    View.frontCanvasContext.font = '14pt Arial';
+    View.frontCanvasContext.fillStyle = 'white';
+    View.frontCanvasContext.fillText('Welcome to MT5, start by choosing a song ', 50, 200);
+    View.frontCanvasContext.fillText('in this drop down menu! ', 50, 220);
+    View.frontCanvasContext.fillText('Documentation and HowTo in the ', 315, 100);
+    View.frontCanvasContext.fillText('first link of the Help tab there! ', 315, 120);
+
+    // Draws an arrow in direction of the drop down menu
+    // x1, y1, x2, y2, width of arrow, color
+    drawArrow(View.frontCanvasContext, 180, 170, 10, 10, 10, 'lightGreen'); 
+    drawArrow(View.frontCanvasContext, 450, 80, 450, 10, 10, 'lightGreen'); 
+
+    View.frontCanvasContext.restore();
 }
 
 function drawSelection() {

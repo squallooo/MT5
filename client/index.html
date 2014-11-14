@@ -16,6 +16,7 @@
         <script src="js/jquery.knob.js"></script>
         <script src="js/knob.js"></script>
         <script src="js/utils.js"></script>
+        <script src="js/canvasArrows.js"></script>
         <script src="js/recorderjs/recorder.js"></script>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
@@ -27,29 +28,28 @@
 	
 		<div id="console">
 		    <ul class="nav nav-tabs">
-              <li class="active"><a id="consoleTab" href="#home" data-toggle="tab">Console</a></li>
-              <li><a id="waveTab" href="#profile" data-toggle="tab">Wave</a></li>
-              <li><a  href="#help" data-toggle="tab">Help</a></li>
-            </ul>
+          <li ><a id="consoleTab" href="#home" data-toggle="tab">Console</a></li>
+          <li><a id="waveTab" href="#profile" data-toggle="tab">Wave</a></li>
+          <li><a class="active" href="#help" data-toggle="tab">Help</a></li>
+        </ul>
             
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div class="tab-pane fade in active" id="home">
-                  <div id="messages">Please choose a song !</div>
-              </div>
-              <div class="tab-pane fade" id="profile">
-                  <canvas id="waveCanvas"></canvas>
-              </div>
-              <div class="tab-pane fade" id="help">
-                  <p>Version 1.0, <a href="http://miageprojet2.unice.fr/index.php?title=Intranet_de_Michel_Buffa/MT5%2C_multitrack_player_for_musicians">Documentation / Manual</a></p>
-                  <p><a href="https://github.com/squallooo/MT5">https://github.com/squallooo/MT5</a></p>
-                  
-                      <p>Michel Buffa, main designer</p><p>and implementer (@micbuffa)</p>
-                      <p>Amine Hallili, HTML/CSS layout</p>
-                  
-              </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane fade in " id="home">
+              <div id="messages">Please choose a song !</div>
+          </div>
+          <div class="tab-pane fade" id="profile">
+              <canvas id="waveCanvas"></canvas>
+          </div>
+            <div class="tab-pane fade in active" id="help">
+                <p>Version 1.0, <a href="http://miageprojet2.unice.fr/index.php?title=Intranet_de_Michel_Buffa/MT5%2C_multitrack_player_for_musicians">Documentation / Manual</a></p>
+                <p><a href="https://github.com/squallooo/MT5">https://github.com/squallooo/MT5</a></p>
+              
+               <p>Michel Buffa, main designer</p><p>and implementer (@micbuffa)</p>
+                <p>Amine Hallili, HTML/CSS layout</p>             
             </div>
-		</div>
+        </div>
+	</div>
 	
 		<div id="masterTools">
 		<div style="position : absolute;width : 602px;">

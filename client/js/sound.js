@@ -474,6 +474,7 @@ function animateTime() {
                     stopAllTracks();
                 }
             }
+        } 
     } else {
         showWelcomeMessage();
     }

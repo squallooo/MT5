@@ -356,6 +356,10 @@ function loadSong(songName) {
 
         });
         
+        // Add range listeners, from range-input.js
+        addRangeListeners();
+
+        
         // disable all mute/solo buttons
         $(".mute").attr("disabled", true);
         $(".solo").attr("disabled", true);

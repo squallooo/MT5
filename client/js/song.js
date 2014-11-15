@@ -178,9 +178,11 @@ function Song(songName, context) {
     };
 
     this.setVolumeOfTrack = function(value, trackNumber) {
-        this.trackVolumeNodes[trackNumber].gain.value = value;
-        this.tracks[trackNumber].volume = value;
-    };
+        if(this.trackVolumeNodes[trackNumber] !== undefined) {
+            this.trackVolumeNodes[trackNumber].gain.value = value;
+            this.tracks[trackNumber].volume = value;
+        }   
+    }
     
     // load all sound samples asyncrhonously
     this.getUrlsOfTracks = function() {

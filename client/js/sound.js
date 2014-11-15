@@ -350,7 +350,7 @@ function loadSong(songName) {
                                     instrument.name + '<div style="float : right;">' + 
                                     "<button class='mute' id='mute" + trackNumber + "' onclick='muteUnmuteTrack(" + trackNumber + ");'><span class='glyphicon glyphicon-volume-up'></span></button> "+ 
                                     "<button class='solo' id='solo" + trackNumber + "' onclick='soloNosoloTrack(" + trackNumber + ");'><img src='../img/earphones.png' /></button></div>" + 
-                                    "<span id='volspan'><input type='range' class = 'volumeSlider' id='volume" + trackNumber + "' min='0' max = '100' value='100' onchange='setVolumeOfTrackDependingOnSliderValue("+trackNumber+");'/></span><td>";
+                                    "<span id='volspan'><input type='range' class = 'volumeSlider custom' id='volume" + trackNumber + "' min='0' max = '100' value='100' onchange='setVolumeOfTrackDependingOnSliderValue("+trackNumber+");'/></span><td>";
                    
             divTrack.appendChild(span);
 

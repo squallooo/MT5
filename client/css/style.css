@@ -40,7 +40,6 @@ body {
     overflow-x: hidden;
 }
 
-
 #messages {
 	height : 160px;
 	white-space: nowrap;
@@ -53,7 +52,6 @@ body {
 	overflow : auto;
 	overflow-x : hidden;
 }
-
 #masterTools {
 	height : 200px;
 	width : 602px;
@@ -94,7 +92,7 @@ body {
 }
 
 #scroll {
-    height : 68%;
+    height : 100%;
     overflow : auto;
     overflow-x : hidden;
 }
@@ -180,13 +178,10 @@ text-decoration: none;
 {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-1);
     margin-left: -30px;
     height: 20px;
-    margin-top : 22px;
+    margin-top : 10px;
 }
 
 .knobDiv {
@@ -200,8 +195,66 @@ text-decoration: none;
 .volumeSlider {
 	margin-left:20px;
 	width:170px
-	
 }
+
+// for sliders
+body {
+  margin-left: 3%;
+}
+
+.touch {
+    width: 40%;
+}
+
+.custom {
+  width: 60%;
+  -webkit-appearance: none !important;
+  height:15px;
+  border-radius: 8px;
+-webkit-appearance: none !important;
+                border-radius: 5px;
+                -webkit-box-shadow: inset 0 0 5px #333;
+                background-image:linear-gradient(to right, lightGreen, blue 100%, orange);
+  transition: background 450ms;
+}
+
+/* Change the Slider Button Color Here */
+.custom::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: #AAA;
+  background-image:         
+  linear-gradient(to bottom, #EEE, #AAA);     
+  border: 1px solid #999;    
+    height:30px;
+    width:30px;
+    border-radius: 15px;
+}
+
+.custom::-moz-range-thumb {
+    background-color: #AAA;
+  background-image:         
+  linear-gradient(to bottom, #EEE, #AAA);     
+  border: 1px solid #999;    
+    height:30px;
+    width:30px;
+    border-radius: 15px;
+}
+
+.custom::-webkit-slider-thumb:before {
+  background-color: yellow;
+}
+
+
+
+
+/* ONLY applicable if you want the bubble above the slider */
+
+output { 
+  width: 100px;
+  height: 40px;
+  font-size: 2em;
+}
+
 
 	
 	

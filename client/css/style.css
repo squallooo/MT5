@@ -46,12 +46,7 @@ body {
 	overflow : auto;
 	overflow-x : hidden;
 }
-#help {
-	height : 160px;
-	white-space: nowrap;
-	overflow : auto;
-	overflow-x : hidden;
-}
+
 #masterTools {
 	height : 200px;
 	width : 602px;
@@ -92,7 +87,7 @@ body {
 }
 
 #scroll {
-    height : 80%;
+    height : 68%;
     overflow : auto;
     overflow-x : hidden;
 }
@@ -178,10 +173,13 @@ text-decoration: none;
 {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-1);
     margin-left: -30px;
     height: 20px;
-    margin-top : 10px;
+    margin-top : 22px;
 }
 
 .knobDiv {
@@ -195,7 +193,12 @@ text-decoration: none;
 .volumeSlider {
 	margin-left:20px;
 	width:170px
+	
 }
+
+	
+	
+	
 
 // for sliders
 body {

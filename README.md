@@ -1,4 +1,4 @@
-MT5 - A multitrack HTML5 Player...
+MT5 - A multitrack HTML5 Player
 ===========
 Online demo at http://mt5demo.gexsoft.com,  give a look also at the user's <a href="http://miageprojet2.unice.fr/Intranet_de_Michel_Buffa/MT5%2c_multitrack_player_for_musicians">manual and documentation</a>.
 

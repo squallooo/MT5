@@ -1,144 +1,114 @@
 html {
-  height: 100%;
-  overflow : hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
-	background-color : grey;
-	height: 100%;
-    /*margin: 0;
-    padding: 0;*/
+    background-color: grey;
+    height: 100%;
 }
 
 #app {
-	margin-left : auto;
-	margin-right : auto;
-	width : 902px;
-	height : 98%;
-	background-color : #DEE0E0;
-	
-	
-	
-	box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
-            -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 902px;
+    height: 98%;
+    background-color: #DEE0E0;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 
-#console  {
-	float : right;
-	top : 0;
-	width : 300px;
-	/*height : 216px;*/
-	color : white;
-	background-color : black;
-	text-align : center;
+#console {
+    float: right;
+    top: 0;
+    width: 300px;
+    color: white;
+    background-color: black;
+    text-align: center;
 }
 
 #waveCanvas {
-    height : 150px;
+    height: 150px;
     white-space: nowrap;
     overflow: auto;
     overflow-x: hidden;
 }
 
 #messages {
-	height : 160px;
-	white-space: nowrap;
-	overflow : auto;
-	overflow-x : hidden;
+    height: 160px;
+    white-space: nowrap;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 #masterTools {
-	height : 200px;
-	width : 602px;
-	top : 0;
-	text-align : center;
+    height: 200px;
+    width: 602px;
+    top: 0;
+    text-align: center;
 }
 
 #volume {
-	height : 42px;
+    height: 42px;
 }
 
 #songs {
-	text-align : center;
+    text-align: center;
 }
 
 #trackControl {
-	float : left;
-	width : 300px;
-	overflow : hidden;
+    float: left;
+    width: 300px;
+    overflow: hidden;
 }
 
 #tracks {
-	width : 100%;
-	margin-top : -1px;
+    width: 100%;
+    margin-top: -1px;
 }
 
 .trackBox {
-	vertical-align : middle;
-	border : 1px solid grey;
+    vertical-align: middle;
+    border: 1px solid grey;
 }
 
 #canvass {
- margin-left : 300px;
+    margin-left: 300px;
 }
 
 #myCanvas {
-	background-color : black;
+    background-color: black;
 }
 
 #scroll {
-    height : 68%;
-    overflow : auto;
-    overflow-x : hidden;
+    height: 68%;
+    overflow: auto;
+    overflow-x: hidden;
 }
-
 
 .styled-select select {
-   background-color : #ddd;
-   background: transparent;
-   
-   width: 240px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
+    background-color: #ddd;
+    background: transparent;
+    width: 240px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+}
 
 .styled-select {
-   width: 240px;
-   height: 34px;
-   overflow: hidden;
-   background: url(../img/down_arrow_select.jpg) no-repeat right #ddd;
-   border: 1px solid #ccc;
-}
-   
-button{
-	height : 42px;
-	width  : 42px;
-	/*font-size: 24px;*/
-}   
-   
-#bplay {
-	/*background: url(../img/play.png) no-repeat right #ddd;*/
-
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    background: url(../img/down_arrow_select.jpg) no-repeat right #ddd;
+    border: 1px solid #ccc;
 }
 
-#bpause {
-
-}
-
-#bstop {
-	
-}
-
-#bsound , .mute{
-	
-}
-
-#brecordMix {
+button {
+    height: 42px;
+    width: 42px;
 }
 
 #sound {
@@ -146,13 +116,9 @@ button{
     margin-left: 28px;
     margin-top: 28px;
 }
-	
-.solo{
-	
-}
-	
 
-.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
     color: #000;
     cursor: default;
     background-color: #DEE0E0;
@@ -165,12 +131,11 @@ button{
 }
 
 a[data-toggle=tab] {
-color: #DEE0E0;
-text-decoration: none;
+    color: #DEE0E0;
+    text-decoration: none;
 }
 
-.pisteProgress
-{
+.pisteProgress {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
@@ -179,30 +144,26 @@ text-decoration: none;
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-1);
     margin-left: -30px;
     height: 20px;
-    margin-top : 22px;
+    margin-top: 22px;
 }
 
 .knobDiv {
-    float : right;
+    float: right;
 }
+
 .activated {
     color: green;
     border: 3px solid green;
 }
 
 .volumeSlider {
-	margin-left:20px;
-	width:170px
-	
+    margin-left: 20px;
+    width: 170px;
 }
 
-	
-	
-	
-
-// for sliders
+/***** for sliders *****/
 body {
-  margin-left: 3%;
+    margin-left: 3%;
 }
 
 .touch {
@@ -210,55 +171,45 @@ body {
 }
 
 .custom {
-  width: 60%;
-  -webkit-appearance: none !important;
-  height:15px;
-  border-radius: 8px;
--webkit-appearance: none !important;
-                border-radius: 5px;
-                -webkit-box-shadow: inset 0 0 5px #333;
-                background-image:linear-gradient(to right, lightGreen, blue 100%, orange);
-  transition: background 450ms;
+    width: 60%;
+    -webkit-appearance: none !important;
+    height: 15px;
+    border-radius: 8px;
+    -webkit-appearance: none !important;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px #333;
+    background-image: linear-gradient(to right, lightGreen, blue 100%, orange);
+    transition: background 450ms;
 }
 
 /* Change the Slider Button Color Here */
 .custom::-webkit-slider-thumb {
     -webkit-appearance: none !important;
     background-color: #AAA;
-  background-image:         
-  linear-gradient(to bottom, #EEE, #AAA);     
-  border: 1px solid #999;    
-    height:30px;
-    width:30px;
+    background-image: linear-gradient(to bottom, #EEE, #AAA);
+    border: 1px solid #999;
+    height: 30px;
+    width: 30px;
     border-radius: 15px;
 }
 
 .custom::-moz-range-thumb {
     background-color: #AAA;
-  background-image:         
-  linear-gradient(to bottom, #EEE, #AAA);     
-  border: 1px solid #999;    
-    height:30px;
-    width:30px;
+    background-image: linear-gradient(to bottom, #EEE, #AAA);
+    border: 1px solid #999;
+    height: 30px;
+    width: 30px;
     border-radius: 15px;
 }
 
 .custom::-webkit-slider-thumb:before {
-  background-color: yellow;
+    background-color: yellow;
 }
-
-
-
 
 /* ONLY applicable if you want the bubble above the slider */
 
-output { 
-  width: 100px;
-  height: 40px;
-  font-size: 2em;
+output {
+    width: 100px;
+    height: 40px;
+    font-size: 2em;
 }
-
-
-	
-	
-	

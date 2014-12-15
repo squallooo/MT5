@@ -26,9 +26,9 @@ The multitrack songs are located in the directory assigned to TRACK_PATH, this i
 
 MT5 has been kept simple. It runs on any modern browser, desktop or mobile, (that means all except IE which promised web audio support for its version 12).
 
-The dirty work of managing theGUI, events, etc is done in sound.js... the main clock is in there too. We use requestAnimationFrame in order to measure time by intervals of about 1/60th of a second. Deltas are measured there in order to know "where we are in a song", and be able to jump or restart after a stop or a pause.
+The dirty work of managing the GUI, events, etc is done in sound.js... the main clock is in there too. We use requestAnimationFrame in order to measure time by intervals of about 1/60th of a second. Deltas are measured there in order to know "where we are in a song", and be able to jump or restart after a stop or a pause.
 
-We audio pausing or jumping in a song is way unnatural as the AudioBufferSource nodes can be started and stopped only once. This "fire and forget" approach chosen in web audio for these particular nodes means that we need to rebuild partially the web audio graph at each pause or jump. The play/pause/jump and building of the audio graph is done in the song.js file.
+Web audio pausing or jumping in a song is way unnatural as the AudioBufferSource nodes can be started and stopped only once. This "fire and forget" approach chosen in web audio for these particular nodes means that we need to rebuild partially the web audio graph at each pause or jump. The play/pause/jump and building of the audio graph is done in the song.js file.
 
 
 I will try to complete this documentation, do not hesitate to contact me at micbuffa at gmail dot org.

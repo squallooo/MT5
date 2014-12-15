@@ -4,11 +4,11 @@ function WaveformDrawer() {
     this.canvas;
     this.displayWidth;
     this.displayHeight;
-    this.sampleStep =  10;
+    this.sampleStep = 10;
     this.color = 'black';
     //test
 
-    this.init = function(decodedAudioBuffer, canvas, color) {
+    this.init = function (decodedAudioBuffer, canvas, color) {
         this.decodedAudioBuffer = decodedAudioBuffer;
         this.canvas = canvas;
         this.displayWidth = canvas.width;
@@ -18,20 +18,22 @@ function WaveformDrawer() {
 
         // Initialize the peaks array from the decoded audio buffer and canvas size
         this.getPeaks();
-    }
+    };
 
     this.max = function max(values) {
-        var max = -Infinity;
+        var m = -Infinity;
         for (var i = 0, len = values.length; i < len; i++) {
             var val = values[i];
-            if (val > max) { max = val; }
+            if (val > m) {
+                m = val;
+            }
         }
-        return max;
-    }
+        return m;
+    };
     // Fist parameter : wjere to start vertically in the canvas (useful when we draw several
     // waveforms in a single canvas)
     // Second parameter = height of the sample
-    this.drawWave = function(startY, height) {
+    this.drawWave = function (startY, height) {
         var ctx = this.canvas.getContext('2d');
         ctx.save();
         ctx.translate(0, startY);
@@ -52,7 +54,7 @@ function WaveformDrawer() {
 
         ctx.beginPath();
         ctx.moveTo(0, halfH);
-       
+
         for (var i = 0; i < width; i++) {
             var h = Math.round(this.peaks[i] * coef);
             ctx.lineTo(i, halfH + h);
@@ -61,17 +63,17 @@ function WaveformDrawer() {
 
         ctx.moveTo(0, halfH);
 
-        for (var i = 0; i < width; i++) {
-            var h = Math.round(this.peaks[i] * coef);
-            ctx.lineTo(i, halfH - h);
+        for (var j = 0; j < width; j++) {
+            var g = Math.round(this.peaks[j] * coef);
+            ctx.lineTo(i, halfH - g);
         }
 
         ctx.lineTo(width, halfH);
 
         ctx.fill();
-        
+
         ctx.restore();
-        }
+    };
 
     // Builds an array of peaks for drawing
     // Need the decoded buffer
@@ -79,7 +81,7 @@ function WaveformDrawer() {
     // compute the value for a given column in the canvas, not the reverse
     // A sampleStep value is used in order not to look each indivudal sample
     // value as they are about 15 millions of samples in a 3mn song !
-    this.getPeaks = function() {
+    this.getPeaks = function () {
         var buffer = this.decodedAudioBuffer;
         var sampleSize = Math.ceil(buffer.length / this.displayWidth);
 
@@ -114,5 +116,5 @@ function WaveformDrawer() {
                 }
             }
         }
-    }
+    };
 }

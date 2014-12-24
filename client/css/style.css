@@ -1,29 +1,25 @@
-html {
-    height: 100%;
-    overflow: hidden;
-}
-
 body {
-    background-color: grey;
-    height: 100%;
+    margin: 0 3%;
+    background: black;
 }
 
 #app {
-    margin-left: auto;
-    margin-right: auto;
-    width: 902px;
-    height: 98%;
-    background-color: #DEE0E0;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+    width: 980px;
+    margin: auto;
+    background: #EEE;
 }
 
 #console {
-    float: right;
+    position: fixed;
     top: 0;
-    width: 300px;
-    color: white;
-    background-color: black;
+    height: 200px;
+    width: 302px;
+    margin-left: 680px;
     text-align: center;
+    color: white;
+    background: black;
+    border: 1px solid grey;
+    z-index: 10;
 }
 
 #waveCanvas {
@@ -41,10 +37,14 @@ body {
 }
 
 #masterTools {
-    height: 200px;
-    width: 602px;
+    position: fixed;
     top: 0;
+    height: 200px;
+    width: 680px;
     text-align: center;
+    background: #EEE;
+    border: 1px solid grey;
+    z-index: 10;
 }
 
 #volume {
@@ -57,7 +57,7 @@ body {
 
 #trackControl {
     float: left;
-    width: 300px;
+    width: 378px;
     overflow: hidden;
 }
 
@@ -72,21 +72,22 @@ body {
 }
 
 #canvass {
-    margin-left: 300px;
+    margin-left: 380px;
 }
 
 #myCanvas {
-    background-color: black;
+    background: black;
 }
 
 #scroll {
-    height: 68%;
-    overflow: auto;
-    overflow-x: hidden;
+    position: absolute;
+    top: 200px;
+    width: 980px;
+    background: #EEE;
 }
 
 .styled-select select {
-    background-color: #ddd;
+    background: #ddd;
     background: transparent;
     width: 240px;
     padding: 5px;
@@ -117,11 +118,10 @@ button {
     margin-top: 28px;
 }
 
-
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
     color: #000;
     cursor: default;
-    background-color: #DEE0E0;
+    background: #EEE;
     border: 1px solid #000;
     border-bottom-color: transparent;
 }
@@ -131,7 +131,7 @@ button {
 }
 
 a[data-toggle=tab] {
-    color: #DEE0E0;
+    color: #EEE;
     text-decoration: none;
 }
 
@@ -162,6 +162,7 @@ a[data-toggle=tab] {
 }
 
 /***** for sliders *****/
+
 body {
     margin-left: 3%;
 }
@@ -183,9 +184,10 @@ body {
 }
 
 /* Change the Slider Button Color Here */
+
 .custom::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    background-color: #AAA;
+    background: #AAA;
     background-image: linear-gradient(to bottom, #EEE, #AAA);
     border: 1px solid #999;
     height: 30px;
@@ -194,7 +196,7 @@ body {
 }
 
 .custom::-moz-range-thumb {
-    background-color: #AAA;
+    background: #AAA;
     background-image: linear-gradient(to bottom, #EEE, #AAA);
     border: 1px solid #999;
     height: 30px;
@@ -203,7 +205,7 @@ body {
 }
 
 .custom::-webkit-slider-thumb:before {
-    background-color: yellow;
+    background: yellow;
 }
 
 /* ONLY applicable if you want the bubble above the slider */

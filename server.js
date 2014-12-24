@@ -3,7 +3,7 @@
 var fs = require("fs");
 // We need to use the express framework: have a real web server that knows how to send mime types etc.
 var express=require('express');
-var path = require('path');
+var path = require('path'); 
 
 // Init globals variables for each module required
 var app = express()

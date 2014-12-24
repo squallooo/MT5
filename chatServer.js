@@ -26,59 +26,59 @@ var sockets = [];
 
 io.on('connection', function (socket) {
     messages.forEach(function (data) {
-      socket.emit('message', data);
+        socket.emit('message', data);
     });
 
     sockets.push(socket);
 
     socket.on('disconnect', function () {
-      sockets.splice(sockets.indexOf(socket), 1);
-      updateRoster();
+        sockets.splice(sockets.indexOf(socket), 1);
+        updateRoster();
     });
 
     socket.on('message', function (msg) {
-      var text = String(msg || '');
+        var text = String(msg || '');
 
-      if (!text)
-        return;
+        if (!text)
+            return;
 
-      socket.get('name', function (err, name) {
-        var data = {
-          name: name,
-          text: text
-        };
+        socket.get('name', function (err, name) {
+            var data = {
+                name: name,
+                text: text
+            };
 
-        broadcast('message', data);
-        messages.push(data);
-      });
+            broadcast('message', data);
+            messages.push(data);
+        });
     });
 
     socket.on('identify', function (name) {
-      socket.set('name', String(name || 'Anonymous'), function (err) {
-        updateRoster();
-      });
+        socket.set('name', String(name || 'Anonymous'), function (err) {
+            updateRoster();
+        });
     });
-  });
+});
 
 function updateRoster() {
-  async.map(
-    sockets,
-    function (socket, callback) {
-      socket.get('name', callback);
-    },
-    function (err, names) {
-      broadcast('roster', names);
-    }
-  );
+    async.map(
+        sockets,
+        function (socket, callback) {
+            socket.get('name', callback);
+        },
+        function (err, names) {
+            broadcast('roster', names);
+        }
+    );
 }
 
 function broadcast(event, data) {
-  sockets.forEach(function (socket) {
-    socket.emit(event, data);
-  });
+    sockets.forEach(function (socket) {
+        socket.emit(event, data);
+    });
 }
 
-server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-  var addr = server.address();
-  console.log("Chat server listening at", addr.address + ":" + addr.port);
+server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
+    var addr = server.address();
+    console.log("Chat server listening at", addr.address + ":" + addr.port);
 });

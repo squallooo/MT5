@@ -3,21 +3,19 @@
 
 function addRangeListeners() {
   console.log("added range listeners");
-   $("body").on("input","input.display-value", function(){
+  $("body").on("input", "input.display-value", function () {
     console.log("display value");
     $(this).next().val($(this).val());
   });
 
   // see: http://stackoverflow.com/a/18389801/1148249
-  $('body').on("input",'input[type="range"]', function () {
-      var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') -     
-                                                        $(this).attr('min'));
-  val *= 100;
-  console.log("val = " + val);
-  
-  var cssProp = 'linear-gradient(to right  , lightGreen, blue '+val +'%, red)';
-  console.log(cssProp);
-  
-      $(this).css('background-image',cssProp) 
+  $('body').on("input", 'input[type="range"]', function () {
+    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min')) * 100;
+    console.log("val = " + val);
+
+    var cssProp = 'linear-gradient(to right  , lightGreen, blue ' + val + '%, red)';
+    console.log(cssProp);
+
+    $(this).css('background-image', cssProp)
   });
 }

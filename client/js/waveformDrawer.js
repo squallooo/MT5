@@ -65,7 +65,7 @@ function WaveformDrawer() {
 
         for (var j = 0; j < width; j++) {
             var g = Math.round(this.peaks[j] * coef);
-            ctx.lineTo(i, halfH - g);
+            ctx.lineTo(j, halfH - g);
         }
 
         ctx.lineTo(width, halfH);

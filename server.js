@@ -93,7 +93,15 @@ function isASoundFile(fileName) {
 }
 
 function getTrack(id, callback) {
+	//console.log("id = " + id);
+	if(!id) return;
+	
 	getFiles(TRACKS_PATH + id, function(fileNames) {
+		if(! fileNames) { 
+			callback(null);
+			return;
+		}
+		
 		var track = {
 			id: id,
 			instruments: []	
@@ -115,7 +123,9 @@ function getTrack(id, callback) {
 
 function getFiles(dirName, callback) {
 	fs.readdir(dirName, function(error, directoryObject) {
-	    directoryObject.sort();
+		if(directoryObject !== undefined) {
+	    	directoryObject.sort();
+		}
         callback(directoryObject);
     });
 }

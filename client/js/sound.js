@@ -734,7 +734,7 @@ function soloNosoloTrack(trackNumber) {
     }
 
     // In all cases we remove the mute state of the curent track
-    currentTrack.mute = false;
+    currentTrack.muted = false;
     $(m).removeClass("activated");
     // Let's change the icon
     m.innerHTML = "<span class='glyphicon glyphicon-volume-up'></span>";

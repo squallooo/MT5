@@ -183,21 +183,16 @@ function adjustSelectionMarkers() {
 }
 
 function initAudioContext() {
-        // Initialise the Audio Context
-        // There can be only one!
-        var context;
+    audioContext = window.AudioContext || window.webkitAudioContext;
 
-        if (typeof AudioContext == "function") {
-            context = new AudioContext();
-            console.log("USING STANDARD WEB AUDIO API");
-        } else if ((typeof webkitAudioContext == "function") || (typeof webkitAudioContext == "object")) {
-            context = new webkitAudioContext();
-            console.log("USING WEBKIT AUDIO API");
-        } else {
-            throw new Error('AudioContext is not supported. :(');
-        }
-        return context;
+    var ctx = new audioContext();
+
+    if(ctx === undefined) {
+        throw new Error('AudioContext is not supported. :(');
     }
+
+    return ctx;
+}
     // SOUNDS AUDIO ETC.
 
 

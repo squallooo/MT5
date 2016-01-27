@@ -35,7 +35,7 @@ app.use(express.static(path.resolve(__dirname, 'client')));
 // launch the http server on given port
 server.listen(PORT || 3000, addrIP || "0.0.0.0", function(){
   var addr = server.address();
-  console.log("Chat server listening at", addr.address + ":" + addr.port);
+  console.log("MT5 server listening at", addr.address + ":" + addr.port);
 });
 
 

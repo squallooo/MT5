@@ -1,6 +1,6 @@
 MT5 - A multitrack HTML5 Player
 ===========
-Online demo at http://mt5demo.gexsoft.com, give a look also at the user's [manual and documentation](http://miageprojet2.unice.fr/Intranet_de_Michel_Buffa/MT5%2c_multitrack_player_for_musicians).
+Online demo at http://mainline.unice.fr, give a look also at the user's [manual and documentation](http://miageprojet2.unice.fr/Intranet_de_Michel_Buffa/MT5%2c_multitrack_player_for_musicians).
 
 MT5 is a sort of jukebox like multitrack player that has been developed for musicians who like to study a song track by track, or mute some tracks and play along it.
 

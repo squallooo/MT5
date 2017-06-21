@@ -32,6 +32,6 @@ The dirty work of managing the GUI, events, etc is done in `sound.js`... the mai
 Web audio pausing or jumping in a song is way unnatural as the AudioBufferSource nodes can be started and stopped only once. This "fire and forget" approach chosen in web audio for these particular nodes means that we need to rebuild partially the web audio graph at each pause or jump. The play/pause/jump and building of the audio graph is done in the song.js file.
 
 
-I will try to complete this documentation, do not hesitate to contact me at micbuffa at gmail dot org.
+I will try to complete this documentation, do not hesitate to contact me at micbuffa at gmail dot com.
 
 There is an online demo at http://mainline.i3s.unice.fr

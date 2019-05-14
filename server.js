@@ -87,31 +87,28 @@ function isASoundFile(fileName) {
 }
 
 async function getTrack(id) {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     if (!id) reject("Need to provide an ID");
 
-    getFiles(`${TRACKS_PATH}/${id}`).then(function(fileNames) {
-      if (!fileNames) {
-        reject(null);
-      }
+    const fileNames = await getFiles(`${TRACKS_PATH}/${id}`);
 
-      const track = {
-        id: id,
-        instruments: []
-      };
-      fileNames.sort();
-      for (let i = 0; i < fileNames.length; i++) {
-        // filter files that are not sound files
-        if (!isASoundFile(fileNames[i])) continue;
+    if (!fileNames) {
+      reject(null);
+    }
 
-        const instrument = fileNames[i].match(/(.*)\.[^.]+$/, "")[1];
-        track.instruments.push({
-          name: instrument,
-          sound: fileNames[i]
-        });
-      }
-      resolve(track);
-    });
+    fileNames.sort();
+
+    const track = {
+      id: id,
+      instruments: fileNames
+        .filter(fileName => isASoundFile(fileName))
+        .map(fileName => ({
+          instrument: fileName.match(/(.*)\.[^.]+$/, "")[1],
+          sound: fileName
+        }))
+    };
+
+    resolve(track);
   });
 }
 

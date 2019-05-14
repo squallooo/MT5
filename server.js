@@ -32,18 +32,16 @@ if (PORT == 8009) {
 app.use(express.static(path.resolve(__dirname, "client")));
 
 // launch the http server on given port
-server.listen(PORT || 3000, addrIP || "0.0.0.0", function() {
+server.listen(PORT || 3000, addrIP || "0.0.0.0", () => {
   const addr = server.address();
   console.log("MT5 server listening at", addr.address + ":" + addr.port);
 });
 
 // routing
-app.get("/", function(req, res) {
-  res.sendfile(__dirname + "/index.html");
-});
+app.get("/", (req, res) => res.sendfile(__dirname + "/index.html"));
 
 // routing
-app.get("/track", async function(req, res) {
+app.get("/track", async (req, res) => {
   const trackList = await getTracks();
 
   if (!trackList) {
@@ -56,7 +54,7 @@ app.get("/track", async function(req, res) {
 });
 
 // routing
-app.get("/track/:id", async function(req, res) {
+app.get("/track/:id", async (req, res) => {
   const id = req.params.id;
   const track = await getTrack(id);
 
@@ -69,25 +67,23 @@ app.get("/track/:id", async function(req, res) {
   res.end();
 });
 
-async function getTracks() {
+const getTracks = async () => {
   const directories = await getFiles(TRACKS_PATH);
   return directories.filter(dir => !dir.match(/^.DS_Store$/));
-}
+};
 
-function endsWith(str, suffix) {
-  return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
+const endsWith = (str, suffix) => str.indexOf(suffix, str.length - suffix.length) !== -1;
 
-function isASoundFile(fileName) {
+isASoundFile = fileName => {
   if (endsWith(fileName, ".mp3")) return true;
   if (endsWith(fileName, ".ogg")) return true;
   if (endsWith(fileName, ".wav")) return true;
   if (endsWith(fileName, ".m4a")) return true;
   return false;
-}
+};
 
-async function getTrack(id) {
-  return new Promise(async (resolve, reject) => {
+const getTrack = async id =>
+  new Promise(async (resolve, reject) => {
     if (!id) reject("Need to provide an ID");
 
     const fileNames = await getFiles(`${TRACKS_PATH}/${id}`);
@@ -103,17 +99,16 @@ async function getTrack(id) {
       instruments: fileNames
         .filter(fileName => isASoundFile(fileName))
         .map(fileName => ({
-          instrument: fileName.match(/(.*)\.[^.]+$/, "")[1],
+          name: fileName.match(/(.*)\.[^.]+$/, "")[1],
           sound: fileName
         }))
     };
 
     resolve(track);
   });
-}
 
-async function getFiles(dirName) {
-  return new Promise((resolve, reject) =>
+const getFiles = async dirName =>
+  new Promise((resolve, reject) =>
     fs.readdir(dirName, function(error, directoryObject) {
       if (error) {
         reject(error);
@@ -125,4 +120,3 @@ async function getFiles(dirName) {
       resolve(directoryObject);
     })
   );
-}

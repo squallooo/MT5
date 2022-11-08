@@ -1,0 +1,7 @@
+services:
+  mt5-multitrack:
+    build: .
+    container_name: mt5-multitrack
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
